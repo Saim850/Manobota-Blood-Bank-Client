@@ -98,7 +98,7 @@ export default function UserProfile() {
             <p className="mb-1">
               <strong>Status:</strong>
               {donor ? (
-                donor.avaliable ?(
+                donor.available ?(
                   <span className="text-green-600 ml-2">
                     Available
                   </span>
