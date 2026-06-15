@@ -11,25 +11,25 @@ const Carousel = () => {
     useEffect(() => {
         const fetchData = async() => {
             try{
-                // active donor calculations
-                const res = await api.get('/donor/')
+                // getting total donor
+                const res = await api.get(`/donor/`)
                 
                 // lives seved calculations
                 let sum = 0;
-                {res.data.map((val) => (
+                {res.data.results.map((val) => (
                     sum += val.total_donations
                 ))}
                 
-                setActiveDonor(res.data.length)
+                setActiveDonor(res.data.count)
                 setLivesSaved(sum)
                 
             }catch(error){
-                console.log(error.response?.data)
-                console.log(error.response?.status)
+                console.log(error)
             }
         }
         fetchData()
     }, [])
+
 
     return (
         <>

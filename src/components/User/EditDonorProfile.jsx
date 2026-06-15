@@ -63,7 +63,7 @@
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-      
+      setLoding(true)
       try {
         const profile = await api.get("/my-donor-profile/");
         const res = await api.put(`/my-donor-profile/${profile.data[0].id}/`, formData);
@@ -73,6 +73,8 @@
         console.log(error.response?.data);
         console.log(error.response?.status);
         alert("Failed to update profile");
+      }finally{
+        setLoding(false)
       }
     };
 
@@ -230,18 +232,13 @@
                       </label>
                     </div>
 
-                    {isLoding?(
-                      <p className="text-center my-4">
-                        <span className="loading loading-xl loading-spinner text-error"></span>
-                      </p>
-                    ):(
-                      <button
-                        type="submit"
-                        className="w-full bg-red-500 hover:bg-red-600 text-white py-4 rounded-2xl font-semibold text-lg transition"
-                      >
-                        Update Profile
-                      </button>
-                    )}
+                    <button
+                      type="submit"
+                      className="w-full bg-red-500 hover:bg-red-600 text-white py-4 rounded-2xl font-semibold text-lg transition"
+                    >
+                      Update Profile
+                    </button>
+                    
                 </form>
               )}
             </div>
