@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://blood-donations-api-1.onrender.com/api",
+  baseURL: "https://manobota-blood-bank-api.onrender.com/api",
 });
 
 api.interceptors.request.use((configs) => {
