@@ -54,9 +54,13 @@
     }, [])
 
 
-    const handleChange = (e) =>{
-        setFormData({...formData, [e.target.name]:e.target.value})
+    const handleChange = (e) => {
+      const { name, value, type, checked } = e.target;
+      setFormData({
+        ...formData, 
+        [name]:type === "checkbox" ? checked : value,})
     }
+
     const handleSubmit = async (e) => {
       e.preventDefault();
       
@@ -214,14 +218,15 @@
                     {/* Availability */}
                     <div className="flex items-center gap-3">
                       <input
-                      type="checkbox"
-                      name="available"
-                      checked={formData.available}
-                      onChange={handleChange}
+                        type="checkbox"
+                        checked={formData.available}
+                        name="available"
+                        onChange={handleChange}
+                        className="w-5 h-5 accent-red-500"
                       />
 
-                      <label className="font-medium text-gray-700">
-                      Available for Blood Donation
+                      <label className="text-gray-700 font-medium">
+                        Available for blood donation
                       </label>
                     </div>
 
