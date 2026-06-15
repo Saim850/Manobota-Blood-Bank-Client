@@ -18,7 +18,7 @@ return(
                 <li><Link to="/become-donor">Become a Donor</Link></li>
             </ul>
             </div>
-            <Link to="/" className="font-bold text-xl ml-5"><span className="text-red-500">DN</span> Blood Bank <span className="text-red-500">.</span></Link>
+            <Link to="/" className="font-bold text-xl ml-5"><span className="text-red-500">Manobota</span> Blood Bank <span className="text-red-500">.</span></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
