@@ -12,6 +12,7 @@ export default function UserProfile() {
         const user_info = await api.get("/user-info/")
         const donor_info = await api.get("/my-donor-profile/")
 
+
         setUser(user_info.data[0])
         setDonor(donor_info.data[0])
 
@@ -155,6 +156,12 @@ export default function UserProfile() {
             ):(
               <button className="w-full bg-gray-800 text-white p-3 rounded mb-3">
                 <Link to='/find-donor'>Find Donor</Link>
+              </button>
+            )}
+
+            {user?.is_staff &&(
+              <button className="w-full bg-pink-600 text-white p-3 rounded mb-3">
+                <Link to='/forgot-password'>Delete someone's profile</Link>
               </button>
             )}
 

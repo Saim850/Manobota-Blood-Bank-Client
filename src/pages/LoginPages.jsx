@@ -29,6 +29,7 @@ const LoginPage = () => {
 
       navigate("/ ")
       alert("Login Successful!");
+      window.location.reload()
 
     } catch (error) {
       console.log(error.response?.data);
@@ -93,10 +94,6 @@ const LoginPage = () => {
             </button>
           )}
         </form>
-
-        {/* <p className="text-center my-3 p-2 rounded-md hover:bg-gray-200 transition duration-100">
-          <Link to='/forgot-password' className="font-bold text-red-500">Forgotten Password?</Link>
-        </p> */}
 
         <p className="text-center mt-6 text-gray-600">
           Don't have an account?{" "}
