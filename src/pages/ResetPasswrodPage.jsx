@@ -17,10 +17,10 @@ export default function ForgotPassword() {
     try {
       await api.post('forgot-password/', formData)
 
-      setMessage("Password reset email sent. Check your email.");
+      setMessage("Profile Delete Successfully");
     } catch (error) {
       console.error(error.response?.data);
-      setMessage("Something went wrong.");
+      setMessage("!! Something went wrong !!");
     } finally{
       setLoding(false)
     }
